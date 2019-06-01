@@ -32,10 +32,15 @@ namespace BatalhaNavalGrupo3
         Button[] BotoesNavios = new Button[5];
         string[] QuantidadeVidasNavios = new string[5] { "5", "4", "3", "3", "2" };//Mensagem de Texto dos Botões
         int[] QuantidadePosicoesNavios = new int[5] { 5, 4, 3, 3, 2 };//Valor que cada Botão gerado representa pra posições dos navios
+        int Botao_Navio_Selecionado = 0;
 
         private void Botao_Start(object sender, EventArgs e)
         {
             definindo_jogo = true;
+            if (button1.Text == "Recomeçar")
+            {
+
+            }
 
             if (definindo_jogo == true)
             {
@@ -43,16 +48,25 @@ namespace BatalhaNavalGrupo3
                 {
                     for (int j = 0; j < ColumnCount; j++)
                     {
-                        quadradoGlobal[i, j] = new Label
+                        if (button1.Text == "Recomeçar")
                         {
-                            Name = $"({i},{j})",
-                            Size = new Size(30, 30),
-                            Location = new Point(i * 30, j * 30),
-                            BackColor = Color.White
-                        };
-                        quadradoGlobal[i, j].Click += Selecionar_navios;
-                        quadradoMarcado[i, j] = false;// Deixei como padrão para todas as Labels False, quando cliacado muda para true
-                        PainelJogo.Controls.Add(quadradoGlobal[i, j]);
+                            quadradoGlobal[i, j].Name = $"({i},{j})";
+                            quadradoGlobal[i, j].BackColor = Color.White;
+                            quadradoMarcado[i, j] = false;
+                        }
+                        else
+                        {
+                            quadradoGlobal[i, j] = new Label
+                            {
+                                Name = $"({i},{j})",
+                                Size = new Size(30, 30),
+                                Location = new Point(i * 30, j * 30),
+                                BackColor = Color.White
+                            };
+                            quadradoGlobal[i, j].Click += Selecionar_navios;
+                            quadradoMarcado[i, j] = false;// Deixei como padrão para todas as Labels False, quando cliacado muda para true
+                            PainelJogo.Controls.Add(quadradoGlobal[i, j]);
+                        }
                     }
                 }
                 for (int i = 0; i < 5; i++)
@@ -75,8 +89,7 @@ namespace BatalhaNavalGrupo3
         private void Botao_Navios(object sender, EventArgs e)
         {
             Button clicarBotao = (Button)sender;
-            int numeroPosicoes = QuantidadePosicoesNavios[clicarBotao.Location.Y/30];
-            Console.WriteLine(numeroPosicoes);
+            Botao_Navio_Selecionado = QuantidadePosicoesNavios[clicarBotao.Location.Y/30];
         }
 
 
@@ -85,25 +98,31 @@ namespace BatalhaNavalGrupo3
             Label lbl = (Label)sender;//Ele chama a Label clickada, pelo menos foi o que entendi
             Color color = lbl.BackColor;//Pela lb clicada ele extrai os valores para Color e Local
             Point local = lbl.Location;
-
-            if (color == System.Drawing.Color.White)
+            if (Botao_Navio_Selecionado == 5)
             {
-                color = System.Drawing.Color.Black;
-                quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30] = true;
-                Console.WriteLine(quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30]);
+                int i = 0;
+                while (i > 5);
+                {
+                    if (color == System.Drawing.Color.White)
+                    {
+                        color = System.Drawing.Color.Black;
+                        quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30] = true;
+                        Console.WriteLine(quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30]);
+                    }
+                    else if (color == System.Drawing.Color.Black)
+                    {
+                        color = System.Drawing.Color.Red;
+                        Console.WriteLine(quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30]);
+                    }
+                    else
+                    {
+                        color = System.Drawing.Color.White;
+                        Console.WriteLine(quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30]);
+                    }
+                    lbl.BackColor = color;
+                    Console.WriteLine(lbl.Location);
+                }
             }
-            else if (color == System.Drawing.Color.Black)
-            {
-                color = System.Drawing.Color.Red;
-                Console.WriteLine(quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30]);
-            }
-            else
-            {
-                color = System.Drawing.Color.White;
-                Console.WriteLine(quadradoMarcado[lbl.Location.X / 30, lbl.Location.Y / 30]);
-            }
-            lbl.BackColor = color;
-            Console.WriteLine(lbl.Location);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
