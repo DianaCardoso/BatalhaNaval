@@ -35,16 +35,16 @@
             // 
             // PainelJogo
             // 
-            this.PainelJogo.Location = new System.Drawing.Point(345, 12);
+            this.PainelJogo.Location = new System.Drawing.Point(307, 12);
             this.PainelJogo.Name = "PainelJogo";
-            this.PainelJogo.Size = new System.Drawing.Size(455, 446);
+            this.PainelJogo.Size = new System.Drawing.Size(591, 524);
             this.PainelJogo.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(22, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(261, 41);
+            this.button1.Size = new System.Drawing.Size(261, 68);
             this.button1.TabIndex = 1;
             this.button1.Text = "Começar";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,9 +52,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(22, 59);
+            this.panel1.Location = new System.Drawing.Point(22, 86);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 368);
+            this.panel1.Size = new System.Drawing.Size(261, 450);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -62,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 491);
+            this.ClientSize = new System.Drawing.Size(910, 549);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PainelJogo);
