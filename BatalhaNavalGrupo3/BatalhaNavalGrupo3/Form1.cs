@@ -30,7 +30,8 @@ namespace BatalhaNavalGrupo3
         Label[,] quadradoGlobal = new Label[10, 10]; // Armazenei cada label gerada dentro de uma matriz.
         bool[,] quadradoMarcado = new bool[10, 10]; // Um Boolean pra salvar os quadrados marcados.
         Button[] BotoesNavios = new Button[5];
-        string[] QuantidadeNavios = new string[5] { "5", "4", "3", "3", "2" };
+        string[] QuantidadeVidasNavios = new string[5] { "5", "4", "3", "3", "2" };//Mensagem de Texto dos Botões
+        int[] QuantidadePosicoesNavios = new int[5] { 5, 4, 3, 3, 2 };//Valor que cada Botão gerado representa pra posições dos navios
 
         private void Botao_Start(object sender, EventArgs e)
         {
@@ -62,15 +63,21 @@ namespace BatalhaNavalGrupo3
                         Name = "button1",
                         Size = new System.Drawing.Size(196, 30),
                         TabIndex = 1,
-                        Text = QuantidadeNavios[i],
+                        Text = QuantidadeVidasNavios[i],
                         UseVisualStyleBackColor = true
                      };
                     panel1.Controls.Add(BotoesNavios[i]);
-                    
+                    BotoesNavios[i].Click += Botao_Navios;
                 }
+                button1.Text = "Recomeçar";
             }
         }
-
+        private void Botao_Navios(object sender, EventArgs e)
+        {
+            Button clicarBotao = (Button)sender;
+            int numeroPosicoes = QuantidadePosicoesNavios[clicarBotao.Location.Y/30];
+            Console.WriteLine(numeroPosicoes);
+        }
 
 
         private void Selecionar_navios(object sender, System.EventArgs e)
