@@ -131,9 +131,17 @@ namespace BatalhaNavalGrupo3
                     lbl.BackColor = color;
                     Console.WriteLine(lbl.Location);
                 }
-                else if (Botao_Navio_Selecionado == 3)
+                else if (Botao_Navio_Selecionado == 3 & botao_ativo_tres < 3)
                 {
-                    
+                    if (color == System.Drawing.Color.White)
+                    {
+                        color = System.Drawing.Color.Black;
+                        quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
+                        botao_ativo_tres += 1;
+                        Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    }
+                    lbl.BackColor = color;
+                    Console.WriteLine(lbl.Location);
                 }
                 else if (Botao_Navio_Selecionado == 2 & botao_ativo_dois < 2)
                 {
