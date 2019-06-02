@@ -25,6 +25,11 @@ namespace BatalhaNavalGrupo3
         const int tamanho_quadrados = 40;
         Boolean definindo_jogo = false;
         Boolean jogando_jogo = false;
+        int botao_ativo_cinco = 0;
+        int botao_ativo_quatro = 0;
+        int botao_ativo_tres = 0;
+        int botao_ativo_tres_contador = 0;
+        int botao_ativo_dois = 0;
 
 
         //Valores Armazenados
@@ -50,6 +55,10 @@ namespace BatalhaNavalGrupo3
                             quadradoGlobal[i, j].BackColor = Color.White;
                             quadradoMarcado[i, j] = false;
                             Botao_Navio_Selecionado = 0;
+                            botao_ativo_cinco = 0;
+                            botao_ativo_quatro = 0;
+                            botao_ativo_tres = 0;
+                            botao_ativo_dois = 0;
                         }
                         else
                         {
@@ -83,84 +92,61 @@ namespace BatalhaNavalGrupo3
                 button1.Text = "Recomeçar";
             }
         }
+
         private void Botao_Navios(object sender, EventArgs e)
         {
             Button clicarBotao = (Button)sender;
-            Botao_Navio_Selecionado = QuantidadePosicoesNavios[clicarBotao.Location.Y/30];
+            Botao_Navio_Selecionado = QuantidadePosicoesNavios[clicarBotao.Location.Y / 60];
         }
-
 
         private void Selecionar_navios(object sender, System.EventArgs e)
         {
             Label lbl = (Label)sender;//Ele chama a Label clicada.
             Color color = lbl.BackColor;//Pela lb clicada ele extrai os valores para Color e Local
             Point local = lbl.Location;
-            
             //Pelo botão selecionado ele escolhe qual if seguir, ainda não limitei o numero de casas que são possiveis marcar
-            if (Botao_Navio_Selecionado == 5)
+            if (definindo_jogo == true)
             {
-                if (color == System.Drawing.Color.White)
+                if (Botao_Navio_Selecionado == 5)
                 {
-                    color = System.Drawing.Color.Black;
-                    quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    if (color == System.Drawing.Color.White & botao_ativo_cinco < 5)
+                    {
+                        color = System.Drawing.Color.Black;
+                        quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
+                        botao_ativo_cinco += 1;
+                        Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    }
+                    lbl.BackColor = color;
+                    Console.WriteLine(lbl.Location);
                 }
-                else if (color == System.Drawing.Color.Black)
+                else if (Botao_Navio_Selecionado == 4 & botao_ativo_quatro < 4)
                 {
-                    color = System.Drawing.Color.Red;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    if (color == System.Drawing.Color.White)
+                    {
+                        color = System.Drawing.Color.Black;
+                        quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
+                        botao_ativo_quatro += 1;
+                        Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    }
+                    lbl.BackColor = color;
+                    Console.WriteLine(lbl.Location);
                 }
-                lbl.BackColor = color;
-                Console.WriteLine(lbl.Location);
-            }
-            else if (Botao_Navio_Selecionado == 4)
-            {
-                if (color == System.Drawing.Color.White)
+                else if (Botao_Navio_Selecionado == 3)
                 {
-                    color = System.Drawing.Color.Black;
-                    quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    
                 }
-                else if (color == System.Drawing.Color.Black)
+                else if (Botao_Navio_Selecionado == 2 & botao_ativo_dois < 2)
                 {
-                    color = System.Drawing.Color.Red;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    if (color == System.Drawing.Color.White)
+                    {
+                        color = System.Drawing.Color.Black;
+                        quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
+                        botao_ativo_dois += 1;
+                        Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
+                    }
+                    lbl.BackColor = color;
+                    Console.WriteLine(lbl.Location);
                 }
-                lbl.BackColor = color;
-                Console.WriteLine(lbl.Location);
-            }
-            else if (Botao_Navio_Selecionado == 3)
-            {
-                if (color == System.Drawing.Color.White)
-                {
-                    color = System.Drawing.Color.Black;
-                    quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
-                }
-                else if (color == System.Drawing.Color.Black)
-                {
-                    color = System.Drawing.Color.Red;
-                    quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = false;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
-                }
-                lbl.BackColor = color;
-                Console.WriteLine(lbl.Location);
-            }
-            else if (Botao_Navio_Selecionado == 2)
-            {
-                if (color == System.Drawing.Color.White)
-                {
-                    color = System.Drawing.Color.Black;
-                    quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados] = true;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
-                }
-                else if (color == System.Drawing.Color.Black)
-                {
-                    color = System.Drawing.Color.Red;
-                    Console.WriteLine(quadradoMarcado[lbl.Location.X / tamanho_quadrados, lbl.Location.Y / tamanho_quadrados]);
-                }
-                lbl.BackColor = color;
-                Console.WriteLine(lbl.Location);
             }
         }
 
