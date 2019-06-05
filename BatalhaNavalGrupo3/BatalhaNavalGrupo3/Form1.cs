@@ -83,11 +83,10 @@ namespace BatalhaNavalGrupo3
         {
             //Primeiro ele gera o jogo do Jogador 1, ele só entra no jogador 2 se o jogador 1 terminar de colocar todos os navio e clicar em "pronto".
             if (definindo_jogo_jogador_1 == true & definindo_jogo_jogador_2 == false)
-            {
-                int armazena_antigo_i = 0;
-                int armazena_antigo_j = 0;
-                for (int i = 0; i < RowCount; i++)// Esses Laços for geram a tabela de labels.
-                {
+            {   
+                //Com esses laços é construido a tabela de labels
+                for (int i = 0; i < RowCount; i++)
+                { 
                     for (int j = 0; j < ColumnCount; j++)
                     {
                         painel_de_quadrados_do_jogador_1[i, j] = new Label
@@ -103,6 +102,7 @@ namespace BatalhaNavalGrupo3
                         painel_jogador_1.Controls.Add(painel_de_quadrados_do_jogador_1[i, j]); // Adiciona o painel de labels do jogador 1 no Form 1 onde ficaram os navios do COM.
                     }
                 }
+                // Dentro desse laço é criado os botões do jogador 1
                 for (int i = 0; i < 4; i++)
                 {
                     botoes_navios_1[i] = new Button()
