@@ -1,6 +1,6 @@
 ﻿namespace BatalhaNavalGrupo3
 {
-    partial class Form1
+    partial class Form_batalha_naval
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,92 +28,117 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PainelJogo = new System.Windows.Forms.Panel();
-            this.Botao_Definir_Jogo = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Botao_Comecar_Jogo = new System.Windows.Forms.Button();
-            this.computador_jogo = new System.Windows.Forms.Panel();
+            this.painel_jogador_1 = new System.Windows.Forms.Panel();
+            this.botao_definir_jogo = new System.Windows.Forms.Button();
+            this.painel_botoes_jogador_1 = new System.Windows.Forms.Panel();
+            this.painel_navios_disponiveis_1 = new System.Windows.Forms.Panel();
+            this.painel_jogador_2 = new System.Windows.Forms.Panel();
+            this.painel_navios_disponiveis_2 = new System.Windows.Forms.Panel();
+            this.painel_botoes_jogador_2 = new System.Windows.Forms.Panel();
+            this.botao_pronto_comecar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // PainelJogo
+            // painel_jogador_1
             // 
-            this.PainelJogo.BackColor = System.Drawing.Color.Aqua;
-            this.PainelJogo.Location = new System.Drawing.Point(408, 12);
-            this.PainelJogo.Name = "PainelJogo";
-            this.PainelJogo.Size = new System.Drawing.Size(531, 491);
-            this.PainelJogo.TabIndex = 0;
+            this.painel_jogador_1.BackColor = System.Drawing.Color.Transparent;
+            this.painel_jogador_1.ForeColor = System.Drawing.Color.Transparent;
+            this.painel_jogador_1.Location = new System.Drawing.Point(12, 332);
+            this.painel_jogador_1.Name = "painel_jogador_1";
+            this.painel_jogador_1.Size = new System.Drawing.Size(538, 495);
+            this.painel_jogador_1.TabIndex = 0;
             // 
-            // Botao_Definir_Jogo
+            // botao_definir_jogo
             // 
-            this.Botao_Definir_Jogo.Location = new System.Drawing.Point(22, 12);
-            this.Botao_Definir_Jogo.Name = "Botao_Definir_Jogo";
-            this.Botao_Definir_Jogo.Size = new System.Drawing.Size(261, 68);
-            this.Botao_Definir_Jogo.TabIndex = 1;
-            this.Botao_Definir_Jogo.Text = "Definir Jogo";
-            this.Botao_Definir_Jogo.UseVisualStyleBackColor = true;
-            this.Botao_Definir_Jogo.Click += new System.EventHandler(this.Botao_Start);
+            this.botao_definir_jogo.Location = new System.Drawing.Point(411, 12);
+            this.botao_definir_jogo.Name = "botao_definir_jogo";
+            this.botao_definir_jogo.Size = new System.Drawing.Size(261, 97);
+            this.botao_definir_jogo.TabIndex = 1;
+            this.botao_definir_jogo.Text = "Jogador 1 - Definir Jogo";
+            this.botao_definir_jogo.UseVisualStyleBackColor = true;
+            this.botao_definir_jogo.Click += new System.EventHandler(this.Botao_Start);
             // 
-            // panel1
+            // painel_botoes_jogador_1
             // 
-            this.panel1.Location = new System.Drawing.Point(22, 86);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 314);
-            this.panel1.TabIndex = 2;
+            this.painel_botoes_jogador_1.Location = new System.Drawing.Point(12, 12);
+            this.painel_botoes_jogador_1.Name = "painel_botoes_jogador_1";
+            this.painel_botoes_jogador_1.Size = new System.Drawing.Size(261, 314);
+            this.painel_botoes_jogador_1.TabIndex = 2;
             // 
-            // panel2
+            // painel_navios_disponiveis_1
             // 
-            this.panel2.Location = new System.Drawing.Point(290, 86);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(112, 314);
-            this.panel2.TabIndex = 3;
+            this.painel_navios_disponiveis_1.Location = new System.Drawing.Point(279, 12);
+            this.painel_navios_disponiveis_1.Name = "painel_navios_disponiveis_1";
+            this.painel_navios_disponiveis_1.Size = new System.Drawing.Size(43, 314);
+            this.painel_navios_disponiveis_1.TabIndex = 3;
             // 
-            // Botao_Comecar_Jogo
+            // painel_jogador_2
             // 
-            this.Botao_Comecar_Jogo.Location = new System.Drawing.Point(22, 406);
-            this.Botao_Comecar_Jogo.Name = "Botao_Comecar_Jogo";
-            this.Botao_Comecar_Jogo.Size = new System.Drawing.Size(261, 97);
-            this.Botao_Comecar_Jogo.TabIndex = 4;
-            this.Botao_Comecar_Jogo.Text = "Começar";
-            this.Botao_Comecar_Jogo.UseVisualStyleBackColor = true;
-            this.Botao_Comecar_Jogo.Click += new System.EventHandler(this.Botao_Comecar_Jogo_Click);
+            this.painel_jogador_2.BackColor = System.Drawing.Color.Transparent;
+            this.painel_jogador_2.Location = new System.Drawing.Point(556, 332);
+            this.painel_jogador_2.Name = "painel_jogador_2";
+            this.painel_jogador_2.Size = new System.Drawing.Size(538, 495);
+            this.painel_jogador_2.TabIndex = 5;
             // 
-            // computador_jogo
+            // painel_navios_disponiveis_2
             // 
-            this.computador_jogo.BackColor = System.Drawing.Color.Aqua;
-            this.computador_jogo.Location = new System.Drawing.Point(945, 12);
-            this.computador_jogo.Name = "computador_jogo";
-            this.computador_jogo.Size = new System.Drawing.Size(531, 491);
-            this.computador_jogo.TabIndex = 5;
+            this.painel_navios_disponiveis_2.Location = new System.Drawing.Point(780, 12);
+            this.painel_navios_disponiveis_2.Name = "painel_navios_disponiveis_2";
+            this.painel_navios_disponiveis_2.Size = new System.Drawing.Size(43, 314);
+            this.painel_navios_disponiveis_2.TabIndex = 4;
             // 
-            // Form1
+            // painel_botoes_jogador_2
+            // 
+            this.painel_botoes_jogador_2.Location = new System.Drawing.Point(829, 12);
+            this.painel_botoes_jogador_2.Name = "painel_botoes_jogador_2";
+            this.painel_botoes_jogador_2.Size = new System.Drawing.Size(261, 314);
+            this.painel_botoes_jogador_2.TabIndex = 3;
+            // 
+            // botao_pronto_comecar
+            // 
+            this.botao_pronto_comecar.Location = new System.Drawing.Point(411, 115);
+            this.botao_pronto_comecar.Name = "botao_pronto_comecar";
+            this.botao_pronto_comecar.Size = new System.Drawing.Size(261, 97);
+            this.botao_pronto_comecar.TabIndex = 4;
+            this.botao_pronto_comecar.Text = "Pronto";
+            this.botao_pronto_comecar.UseVisualStyleBackColor = true;
+            this.botao_pronto_comecar.Click += new System.EventHandler(this.Botao_Comecar_Jogo_Click);
+            // 
+            // Form_batalha_naval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1502, 509);
-            this.Controls.Add(this.computador_jogo);
-            this.Controls.Add(this.Botao_Comecar_Jogo);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Botao_Definir_Jogo);
-            this.Controls.Add(this.PainelJogo);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ClientSize = new System.Drawing.Size(1102, 916);
+            this.Controls.Add(this.botao_definir_jogo);
+            this.Controls.Add(this.painel_botoes_jogador_2);
+            this.Controls.Add(this.painel_navios_disponiveis_2);
+            this.Controls.Add(this.painel_jogador_2);
+            this.Controls.Add(this.botao_pronto_comecar);
+            this.Controls.Add(this.painel_navios_disponiveis_1);
+            this.Controls.Add(this.painel_botoes_jogador_1);
+            this.Controls.Add(this.painel_jogador_1);
+            this.Name = "Form_batalha_naval";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        //Paineis Gerais
+        private System.Windows.Forms.Button botao_pronto_comecar;
+        private System.Windows.Forms.Button botao_definir_jogo;
 
-        private System.Windows.Forms.Panel PainelJogo;
-        private System.Windows.Forms.Button Botao_Definir_Jogo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Botao_Comecar_Jogo;
-        private System.Windows.Forms.Panel computador_jogo;
+        //Paineis e Botões do Jogador 1
+        private System.Windows.Forms.Panel painel_jogador_1;
+        private System.Windows.Forms.Panel painel_botoes_jogador_1;
+        private System.Windows.Forms.Panel painel_navios_disponiveis_1;
+
+        //Paineis e Botões do Jogador 2
+        private System.Windows.Forms.Panel painel_jogador_2;
+        private System.Windows.Forms.Panel painel_botoes_jogador_2;
+        private System.Windows.Forms.Panel painel_navios_disponiveis_2;
+
     }
 }
 
