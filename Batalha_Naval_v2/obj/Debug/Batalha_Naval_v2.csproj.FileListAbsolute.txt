@@ -1,0 +1,10 @@
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\obj\Debug\Batalha_Naval_v2.csprojAssemblyReference.cache
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\obj\Debug\Batalha_Naval_v2.janela_jogo.resources
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\obj\Debug\Batalha_Naval_v2.Properties.Resources.resources
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\obj\Debug\Batalha_Naval_v2.csproj.GenerateResource.cache
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\obj\Debug\Batalha_Naval_v2.csproj.CoreCompileInputs.cache
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\bin\Debug\Batalha_Naval_v2.exe.config
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\bin\Debug\Batalha_Naval_v2.exe
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\bin\Debug\Batalha_Naval_v2.pdb
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\obj\Debug\Batalha_Naval_v2.exe
+C:\Users\gkss\OneDrive\Área de Trabalho\Batalha_Naval_v2\obj\Debug\Batalha_Naval_v2.pdb
